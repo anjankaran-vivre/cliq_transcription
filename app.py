@@ -3,6 +3,9 @@ import requests
 import io
 import os
 from groq import Groq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
