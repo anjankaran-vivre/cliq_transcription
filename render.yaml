@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: groq-transcription-api
+    env: python
+    plan: free
+    runtime: python3.11
+    region: ohio
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --timeout 300
+    autoDeploy: true
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
